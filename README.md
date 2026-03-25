@@ -1,49 +1,63 @@
-# Project: QR Code Generator in Python
+# QR Code Generator in Python
 
-## Project Description
+A simple Python script that allows you to easily generate **QR Codes** from any text or URL and save them as image files.
 
-This project is a simple Python script that allows you to easily generate a **QR Code** from any text or URL and save it as an image file.
 
 
 ## Features
 
-* Accepts user input (text or URL)
-* Allows custom file naming
-* Automatically adds `.png` extension if missing
-* Generates high-quality QR codes
-* Adjustable size and error correction level
-* Optional color customization
+- Accepts user input (text or URL)
+- Allows custom file naming
+- Automatically adds `.png` extension if missing
+- Generates high-quality QR codes
+- Adjustable size and error correction level
+- Optional color customization
+
 
 
 ## Requirements
 
-Make sure you have Python installed on your system.
-
-You also need to install the `qrcode` library:
+- Python 3.x
+- Install dependencies with:
 
 ```bash
-pip install qrcode
+pip install -r requirements.txt
 ```
+
+The main dependency is qrcode[pil], which includes Pillow for image handling.
+
+
 
 ## How to Run
 
-1. Run the Python script:
+1. Run the script:
 
 ```bash
 python qr_generator.py
 ```
 
-2. The program will ask for:
-
-   * A text or URL
-   * The output file name (e.g., `code.png`)
+2. Enter the following when prompted:
+    - A text or URL
+    - The output file name (e.g., code.png)
 
 3. After execution, the QR code image will be saved in the same directory.
 
 
-## Code Structure
 
-The script follows these steps:
+## Project Structure
+
+```
+qr-code-generator/
+│
+├─ qr_generator.py
+├─ requirements.txt
+├─ README.md
+└─ .gitignore
+```
+
+
+
+## Code Structure
 
 1. Get input from the user
 2. Configure QR Code settings (size, border, error correction)
@@ -52,41 +66,74 @@ The script follows these steps:
 5. Save the image file
 
 
+
 ## Customization (Optional)
 
-You can change the QR code colors:
+- Change QR code colors:
 
-```python
+```bash
 img = qr.make_image(fill_color="blue", back_color="white")
 ```
 
-You can also adjust size and layout:
+- Adjust size and layout:
 
-```python
-box_size=10
-border=4
+```bash
+box_size = 10
+border = 4
 ```
+
 
 
 ## Notes
 
-* If you forget to add `.png` to the filename, the script will automatically append it.
-* The more data you input, the larger the QR code becomes.
+- If you forget to add .png to the filename, the script will automatically append it.
+- The more data you input, the larger the QR code becomes.
+
 
 
 ## Use Cases
+- Sharing links quickly
+- Digital business cards
+- Wi-Fi connection QR codes
+- Educational projects
 
-* Sharing links quickly
-* Digital business cards
-* Wi-Fi connection QR codes
-* Educational projects
 
 
 ## Author
 
-This project is created for learning and practicing Python.
+Aram Mehraban
+  - This project is created for learning and practicing Python.
+
 
 
 ## License
 
 This project is free to use.
+
+
+
+
+**Extra tips for GitHub:**
+
+1. Add a `requirements.txt` file with:
+
+```bash
+qrcode[pil]==7.4.2
+```
+
+2. Add a `.gitignore`:
+    - pycache/
+    *.py[cod]
+    *.pyo
+    venv/
+    .env
+    *.png
+
+
+3. Commit and push:
+
+```bash
+git add README.md requirements.txt .gitignore
+git commit -m "Add polished README, requirements, and gitignore"
+git push origin main
+```
