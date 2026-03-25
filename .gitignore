@@ -1,0 +1,7 @@
+# Ignoriere generierte Bilder
+*.png
+*.jpg
+
+# Ignoriere Python Cache
+__pycache__/
+*.pyc
