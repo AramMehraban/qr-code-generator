@@ -8,6 +8,6 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Ignoriere Virtuel einviroment 
+# Virtual environment
 venv/
 .env
