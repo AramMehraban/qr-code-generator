@@ -1,0 +1,4 @@
+qrcode[pil]==7.4.2
+
+# qrcode[pil] ensures the Pillow dependency is installed automatically.
+# You can pin the version to prevent breaking changes.

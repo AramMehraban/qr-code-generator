@@ -1,7 +1,11 @@
-# Ignoriere generierte Bilder
-*.png
-*.jpg
-
-# Ignoriere Python Cache
+# Python cache
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+
+# Environment
+venv/
+.env
+
+# Generated images
+*.png
