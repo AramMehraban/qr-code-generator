@@ -1,34 +1,34 @@
 import qrcode
+from datetime import datetime  # for logging timestamp
 
-def generiere_qr_code():
-    print("Willkommen beim QR-Code Generator!")
-    # 1. Benutzereingabe abfragen
-    daten = input("Bitte gib einen Text oder eine URL ein: ")
-    dateiname = input("Wie soll die Bilddatei heißen? (z.B. code.png): ")
+def generate_qr_code():
+    print("Welcome to the QR-Code Generator!")
 
-# Wenn der User .png vergisst, fügen wir es an
-    if not dateiname.endswith('.png'):
-        dateiname += '.png'
+    # Feature 2: Prevent empty input
+    while True:
+        data = input("Please enter text or URL: ").strip()
+        if data != "":
+            break
+        print("Error: Input cannot be empty! Please try again.\n")
 
-    # 2. QR-Code konfigurieren (optional, macht den Code aber robuster/schöner)
-    qr = qrcode.QRCode(
-        version=1, # Größe des Codes (1 bis 40)
-        error_correction=qrcode.constants.ERROR_CORRECT_L, # Fehlerkorrektur-Level
-        box_size=10, # Größe der einzelnen Kästchen
-        border=4, # Randbreite
-    )
+    filename = input("Enter the image filename (e.g., code.png): ").strip()
+    if not filename.endswith('.png'):
+        filename += '.png'
 
-    # 3. Daten hinzufügen und QR-Code generieren
-    qr.add_data(daten)
+    # Create QR-Code
+    qr = qrcode.QRCode(version=1, error_correction=qrcode.constants.ERROR_CORRECT_L, box_size=10, border=4)
+    qr.add_data(data)
     qr.make(fit=True)
-
-    # 4. Bild erstellen (Hier ist die Bonus-Lösung mit Farben versteckt!)
     img = qr.make_image(fill_color="black", back_color="white")
+    img.save(filename)
 
-    # 5. Bild speichern
-    img.save(dateiname)
-    print(f"Erfolg! Der QR-Code wurde als '{dateiname}' gespeichert.")
+    # Feature 1: Save history to file
+    with open("history.txt", "a", encoding="utf-8") as file:
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        file.write(f"[{timestamp}] {data} -> saved as: {filename}\n")
 
-# Das Skript ausführen
+    print(f"Success! QR-Code saved as '{filename}'.")
+    print("Input has been logged in history.txt.")
+
 if __name__ == "__main__":
-    generiere_qr_code()
+    generate_qr_code()
