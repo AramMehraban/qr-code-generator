@@ -1,5 +1,6 @@
 import qrcode
 from datetime import datetime  # for logging timestamp
+import re  # for cleaning filename
 
 def generate_qr_code():
     print("Welcome to the QR-Code Generator!")
@@ -12,11 +13,18 @@ def generate_qr_code():
         print("Error: Input cannot be empty! Please try again.\n")
 
     filename = input("Enter the image filename (e.g., code.png): ").strip()
+    # Remove illegal characters for Windows
+    filename = re.sub(r'[<>:"/\\|?*]', '_', filename)
     if not filename.endswith('.png'):
         filename += '.png'
 
     # Create QR-Code
-    qr = qrcode.QRCode(version=1, error_correction=qrcode.constants.ERROR_CORRECT_L, box_size=10, border=4)
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=10,
+        border=4
+    )
     qr.add_data(data)
     qr.make(fit=True)
     img = qr.make_image(fill_color="black", back_color="white")
