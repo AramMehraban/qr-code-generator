@@ -19,6 +19,7 @@ A simple Python script that allows you to easily generate **QR Codes** from any 
 
 ```bash
 pip install -r requirements.txt
+```
 
 ### Or install directly:
 
@@ -120,12 +121,13 @@ Aram Mehraban
 
 
 
+
 ## License
 
 This project is free to use.
 
 
-**Extra tips for GitHub:**
+## Extra tips for GitHub:
 
 1. Add a `requirements.txt` file with:
 
