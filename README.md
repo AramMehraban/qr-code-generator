@@ -2,8 +2,6 @@
 
 A simple Python script that allows you to easily generate **QR Codes** from any text or URL and save them as image files.
 
-
-
 ## Features
 
 - Accepts user input (text or URL)
@@ -13,10 +11,6 @@ A simple Python script that allows you to easily generate **QR Codes** from any 
 - Adjustable size and error correction level
 - Optional color customization
 
-
-
-## Requirements
-
 ## Requirements
 
 - Python 3.x
@@ -25,18 +19,17 @@ A simple Python script that allows you to easily generate **QR Codes** from any 
 
 ```bash
 pip install -r requirements.txt
-```
 
 ### Or install directly:
 
 ```bash
 pip install qrcode Pillow
 ```
+
 ##### Notes:
     - qrcode → for generating QR codes
     - Pillow → for working with images (required by qrcode to save images)
-
-The main dependency is qrcode[pil], which includes Pillow for image handling
+    - The main dependency is qrcode[pil], which includes Pillow for image handling
 
 
 
@@ -53,7 +46,16 @@ python qr_generator.py
     - The output file name (e.g., code.png)
 
 3. After execution, the QR code image will be saved in the same directory.
+    - Empty input is not allowed.
+    - Filenames are safe for Windows (illegal characters replaced automatically).
 
+
+## History Log
+
+- Every time you generate a QR-Code, the input text or URL is automatically saved in `history.txt`.
+- This file keeps a record of all inputs along with the timestamp and the saved filename.
+- `history.txt` is created automatically when you run the program for the first time.
+- Note: This file is ignored in Git (`.gitignore`) and will not be uploaded to GitHub.
 
 
 ## Project Structure
@@ -121,8 +123,6 @@ Aram Mehraban
 ## License
 
 This project is free to use.
-
-
 
 
 **Extra tips for GitHub:**
