@@ -4,4 +4,10 @@
 
 # Ignoriere Python Cache
 __pycache__/
+*.py[cod]
 *.pyc
+*.pyo
+
+# Ignoriere Virtuel einviroment 
+venv/
+.env
