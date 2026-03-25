@@ -1,11 +1,3 @@
 # Python cache
 __pycache__/
-*.py[cod]
-*.pyo
-
-# Environment
-venv/
-.env
-
-# Generated images
-*.png
+*.pyc

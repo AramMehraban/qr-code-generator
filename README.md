@@ -3,6 +3,7 @@
 A simple Python script that allows you to easily generate **QR Codes** from any text or URL and save them as image files.
 
 
+
 ## Features
 
 - Accepts user input (text or URL)
@@ -11,6 +12,7 @@ A simple Python script that allows you to easily generate **QR Codes** from any 
 - Generates high-quality QR codes
 - Adjustable size and error correction level
 - Optional color customization
+
 
 
 ## Requirements
@@ -23,6 +25,7 @@ pip install -r requirements.txt
 ```
 
 The main dependency is qrcode[pil], which includes Pillow for image handling.
+
 
 
 ## How to Run
@@ -39,6 +42,8 @@ python qr_generator.py
 
 3. After execution, the QR code image will be saved in the same directory.
 
+
+
 ## Project Structure
 
 ```
@@ -51,6 +56,7 @@ qr-code-generator/
 ```
 
 
+
 ## Code Structure
 
 1. Get input from the user
@@ -58,6 +64,7 @@ qr-code-generator/
 3. Generate the QR Code
 4. Convert it into an image
 5. Save the image file
+
 
 
 ## Customization (Optional)
@@ -76,6 +83,7 @@ border = 4
 ```
 
 
+
 ## Notes
 
 - If you forget to add .png to the filename, the script will automatically append it.
@@ -90,10 +98,12 @@ border = 4
 - Educational projects
 
 
+
 ## Author
 
 Aram Mehraban
-This project is created for learning and practicing Python.
+  - This project is created for learning and practicing Python.
+
 
 
 ## License
@@ -112,12 +122,12 @@ qrcode[pil]==7.4.2
 ```
 
 2. Add a `.gitignore`:
-pycache/
-*.py[cod]
-*.pyo
-venv/
-.env
-*.png
+    - pycache/
+    *.py[cod]
+    *.pyo
+    venv/
+    .env
+    *.png
 
 
 3. Commit and push:
