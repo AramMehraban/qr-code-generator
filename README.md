@@ -17,14 +17,26 @@ A simple Python script that allows you to easily generate **QR Codes** from any 
 
 ## Requirements
 
+## Requirements
+
 - Python 3.x
-- Install dependencies with:
+
+### Install dependencies via `requirements.txt`:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-The main dependency is qrcode[pil], which includes Pillow for image handling.
+### Or install directly:
+
+```bash
+pip install qrcode Pillow
+```
+##### Notes:
+    - qrcode → for generating QR codes
+    - Pillow → for working with images (required by qrcode to save images)
+
+The main dependency is qrcode[pil], which includes Pillow for image handling
 
 
 
